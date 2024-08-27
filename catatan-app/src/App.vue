@@ -2,6 +2,32 @@
 import { ref } from 'vue';
 
 let modal = ref(false)
+let catatanNew = ref("")
+let kotakCatatan = ref([])
+let errorMsg = ref("")
+
+let d = 0
+
+const addNotes = () => {
+
+  if(!catatanNew.value){
+    errorMsg.value = "Kosong noh"
+    return
+  }
+
+  errorMsg.value = ""
+
+  kotakCatatan.value.push({
+    id: d,
+    // title: 
+    content: catatanNew.value,
+    date: new Date().toISOString()
+  })
+  d++
+  catatanNew.value = ""
+  modal.value = false
+
+}
 
 </script>
 
@@ -14,19 +40,29 @@ let modal = ref(false)
       <h2 class="text-4xl text-center font-bold bg-gradient-to-r from-slate-700 to-slate-100 bg-clip-text text-transparent mt-6">List of memo</h2>
       <hr class="border-1 mt-6 border-sky-600">
       <button @click="modal = true" class="p-2 w-1/12 my-14 bg-sky-300 text-slate-600 font-semibold font-mono rounded-md hover:bg-sky-600 hover:text-slate-100 transition duration-150 active:bg-sky-800 active:text-slate-100">+</button>
-      <section class="container w-full h-52 bg-slate-400 p-5 rounded-md overflow-x-scroll">
-        <div class="w-max h-full flex items-center gap-4 ">
-          <!-- <div class="card p-5 w-52 h-full bg-slate-700 text-slate-300">
-            sebus
-          </div> -->
+
+
+
+
+      <section class="container w-1/2 h-52 bg-slate-400 p-5 rounded-md ">
+        <div v-for="(note, index) in kotakCatatan" :key="index" class="overflow-x-scroll w-max h-full flex flex-row items-center gap-4 ">
+            <div class="h-1/2 w-1/2 p-2 bg-slate-400 text-slate-800">
+              <p>{{ note.id }}</p>
+              <p>{{ note.content }}</p>
+              <p>{{ note.date }}</p>
+            </div>
         </div>
       </section>
     </main>
+
+
     <div v-if="modal" class="modal-box top-0 left-0 absolute w-full h-full bg-white/30 flex items-center justify-center backdrop-blur-sm flex-col">
         <button class="w-8 h-8 bg-slate-700 rounded-md ml-64" @click="modal = false">&times;</button>
-        <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
-        <button>Add</button>
+        <textarea v-model="catatanNew" name="notes" id="notes" cols="30" rows="10" class="text-slate-700"></textarea>
+        <button class="bg-slate-700 px-3 py-1" @click="addNotes">Add</button>
     </div>
+
+
   </div>
 </template>
 
