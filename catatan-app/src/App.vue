@@ -21,12 +21,20 @@ const addNotes = () => {
     id: d,
     // title: 
     content: catatanNew.value,
-    date: new Date().toISOString()
+    date: new Date().toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    })
   })
   d++
   catatanNew.value = ""
   modal.value = false
 
+}
+
+const deleteNotes = (id) => {
+  kotakCatatan.value = kotakCatatan.value.filter((note) => note.id !== id)
 }
 
 </script>
@@ -44,12 +52,15 @@ const addNotes = () => {
 
 
 
-      <section class="container w-1/2 h-52 bg-slate-400 p-5 rounded-md ">
-        <div v-for="(note, index) in kotakCatatan" :key="index" class="overflow-x-scroll w-max h-full flex flex-row items-center gap-4 ">
-            <div class="h-1/2 w-1/2 p-2 bg-slate-400 text-slate-800">
+      <section class="container w-1/2 h-72 bg-slate-700 p-5 mb-5 rounded-md overflow-x-scroll">
+        <div class="flex flex-nowrap gap-4 items-center h-full">
+            <div v-for="(note, index) in kotakCatatan" :key="index" class="flex flex-col justify-between h-full w-48 p-2 text-center bg-slate-200 text-slate-700 rounded-md font-mono">
               <p>{{ note.id }}</p>
               <p>{{ note.content }}</p>
-              <p>{{ note.date }}</p>
+              <div class="flex flex-row justify-center items-center mt-2">
+                <p class="text-xs mx-3">{{ note.date }}</p>
+                <button @click="deleteNotes(note.id)" class="h-7 w-14 text-xs bg-slate-400 text-slate-300">Delete</button>
+              </div>
             </div>
         </div>
       </section>
