@@ -47,7 +47,7 @@ const deleteNotes = (id) => {
     <main class="h-auto">
       <h2 class="text-4xl text-center font-bold bg-gradient-to-r from-slate-700 to-slate-100 bg-clip-text text-transparent mt-6">List of memo</h2>
       <hr class="border-1 mt-6 border-sky-600">
-      <button @click="modal = true" class="p-2 w-1/12 my-14 bg-sky-300 text-slate-600 font-semibold font-mono rounded-md hover:bg-sky-600 hover:text-slate-100 transition duration-150 active:bg-sky-800 active:text-slate-100">+</button>
+      <button @click="modal = true" class="add-button p-2 w-1/12 my-14 bg-sky-300 text-slate-600 font-semibold font-mono rounded-md hover:bg-sky-600 hover:text-slate-100 transition duration-150 active:bg-sky-800 active:text-slate-100 float-right mr-10">+</button>
 
 
 
@@ -67,7 +67,7 @@ const deleteNotes = (id) => {
     </main>
 
 
-    <div v-if="modal" class="modal-box top-0 left-0 absolute w-full h-full bg-white/30 flex items-center justify-center backdrop-blur-sm flex-col">
+    <div v-if="modal" class="modal-box top-0 left-0 fixed inset-0 z-10 w-full h-full bg-white/30 flex items-center justify-center backdrop-blur-sm flex-col">
         <button class="w-8 h-8 bg-slate-700 rounded-md ml-64" @click="modal = false">&times;</button>
         <textarea v-model="catatanNew" name="notes" id="notes" cols="30" rows="10" class="text-slate-700"></textarea>
         <button class="bg-slate-700 px-3 py-1" @click="addNotes">Add</button>
@@ -86,6 +86,19 @@ const deleteNotes = (id) => {
 
 .container::-webkit-scrollbar{
   display: none;
+}
+
+.add-button:active {
+  animation: gede 0.2s ease-in forwards;
+}
+
+@keyframes gede {
+  0% {
+    transform: scale(1);
+  }
+  100%  {
+    transform: scale(1.3);
+  }
 }
 
 </style>
