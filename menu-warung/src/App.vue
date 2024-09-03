@@ -1,47 +1,81 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <header>
+      <h2>Our Resto</h2>
+      <input type="search" placeholder="Search...">
+    </header>
+
+    <section class="menu">
+      <div class="card">
+        <div class="card-body">
+          <img src="" alt="">
+          <p>Items</p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
+
 <style scoped>
-header {
-  line-height: 1.5;
+
+
+main {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  flex-direction: column;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+main header h2 {
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(to right, red, blue);
+  color: transparent;
+  background-clip: text;
+  font-size: xx-large;
 }
+
+
+main .menu {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+main .menu .card {
+  width: 10rem;
+  height: 12rem;
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in;
+  border: 1px solid rgb(43, 36, 36);
+  
+}
+
+main .menu .card:hover {
+  box-shadow: 0.8rem 0.1rem 4rem;
+}
+
 </style>
