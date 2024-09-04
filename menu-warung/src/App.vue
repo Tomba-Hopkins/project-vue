@@ -3,6 +3,7 @@
 import { ref } from 'vue';
 
 import menus from './data/menu.json'
+import CardType from './components/CardType.vue';
 
 </script>
 
@@ -14,10 +15,7 @@ import menus from './data/menu.json'
     </header>
 
     <section class="menu">
-      <div class="card" v-for="menu in menus" :key="menu.id">
-          <img :src="menu.img" alt="">
-          <p>{{ menu.title }}: <span>{{ menu.items.length }}biji</span></p>
-      </div>
+      <CardType v-for="menu in menus" :key="menu.id" :card="menu"/>
     </section>
   </main>
 </template>
@@ -61,33 +59,5 @@ main .menu {
   justify-content: center;
   margin-top: 4rem;
   gap: 3rem;
-}
-
-main .menu .card {
-  width: 10rem;
-  height: 12rem;
-  background-color: whitesmoke;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s ease-in;
-  border: 1px solid rgb(43, 36, 36);
-  margin: 1rem;
-  
-}
-
-main .menu .card:hover {
-  box-shadow: 0.8rem 0.1rem 4rem;
-}
-
-
-main .menu .card img {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 1rem;
-  border: 1px solid rgb(50, 41, 41);
 }
 </style>
