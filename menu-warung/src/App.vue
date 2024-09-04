@@ -19,8 +19,8 @@ watch(search, () => {
 <template>
   <main>
     <header>
-      <h2>Our Resto</h2>
-      <input v-model="search" type="search" placeholder="Search...">
+      <label for="search"><h2>Our Resto</h2></label>
+      <input id="search" v-model="search" type="search" placeholder="Search...">
     </header>
 
     <section class="menu">
@@ -40,6 +40,7 @@ main {
   justify-content: center;
   padding: 1rem;
   flex-direction: column;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 main header {
@@ -56,7 +57,7 @@ main header h2 {
   background-image: linear-gradient(to right, red, blue);
   color: transparent;
   background-clip: text;
-  font-size: xx-large;
+  font-size: 3rem;
 }
 
 
@@ -69,4 +70,13 @@ main .menu {
   margin-top: 4rem;
   gap: 3rem;
 }
+
+main input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  margin-left: 1rem;
+  font-family: monospace;
+}
+
 </style>
