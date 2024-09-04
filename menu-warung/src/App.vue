@@ -1,9 +1,18 @@
 <script setup>
 
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 import menus from './data/menu.json'
 import CardType from './components/CardType.vue';
+
+const menusValue = ref(menus)
+const search = ref("")
+
+watch(search, () => {
+  menusValue.value = menus.filter((menu) => {
+    return menu.title.toLowerCase().includes(search.value.toLowerCase())
+  })
+})
 
 </script>
 
@@ -11,11 +20,11 @@ import CardType from './components/CardType.vue';
   <main>
     <header>
       <h2>Our Resto</h2>
-      <input type="search" placeholder="Search...">
+      <input v-model="search" type="search" placeholder="Search...">
     </header>
 
     <section class="menu">
-      <CardType v-for="menu in menus" :key="menu.id" :card="menu"/>
+      <CardType v-for="menu in menusValue" :key="menu.id" :card="menu"/>
     </section>
   </main>
 </template>
