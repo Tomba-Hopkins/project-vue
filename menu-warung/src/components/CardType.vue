@@ -12,8 +12,7 @@
         <img :src="card.img" :alt="card.title">
         <h2>{{ card.title }}</h2>
         <p>{{ card.items.length }} items</p>
-        <RouterLink :to="`/${card.title}`"><button type="button" >See</button></RouterLink>
-
+        <RouterLink class="liat" :to="`/${card.title}`">See</RouterLink>
       </div>
 </template>
 
@@ -61,13 +60,19 @@
 }
 
 .card .liat {
+  display: inline-block;
   width: 50%;
   padding: 0.3rem;
   transition: 0.4s linear;
   border-radius: 0.2rem;
   border: none;
+  text-decoration: none;
+  background-color: aliceblue;
+  text-align: center;
+  color: black;
 }
 .card .liat:hover {
   background-color: gray;
+  color: white;
 }
 </style>
