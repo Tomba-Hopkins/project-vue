@@ -4,6 +4,7 @@ import { ref, watch } from 'vue';
 
 import menus from './data/menu.json'
 import CardType from './components/CardType.vue';
+import { RouterView } from 'vue-router';
 
 const menusValue = ref(menus)
 const search = ref("")
@@ -18,6 +19,7 @@ watch(search, () => {
 
 <template>
   <main>
+    <RouterView/>
     <header>
       <label for="search"><h2>Our Resto</h2></label>
       <input id="search" v-model="search" type="search" placeholder="Search...">
@@ -26,6 +28,7 @@ watch(search, () => {
     <section class="menu">
       <CardType v-for="menu in menusValue" :key="menu.id" :card="menu"/>
     </section>
+    
   </main>
 </template>
 
