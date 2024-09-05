@@ -1,15 +1,13 @@
 <script setup>
 
-import { ref, watch } from 'vue';
-
-import menus from './data/menu.json'
-import CardType from './components/CardType.vue';
 import { RouterView } from 'vue-router';
+import Navbar from './components/Navbar.vue';
 
 </script>
 
 <template>
   <main>
+    <Navbar/>
     <RouterView/>
   </main>
 </template>

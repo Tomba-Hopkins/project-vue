@@ -3,7 +3,7 @@
 import { ref, watch } from 'vue'
 
 import menus from '../data/menu.json'
-import CardType from './CardType.vue';
+import CardType from '../components/CardType.vue';
 
 const menusValue = ref(menus)
 const search = ref("")
