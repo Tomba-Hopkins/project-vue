@@ -1,6 +1,8 @@
 <script setup>
     const { card } = defineProps(["card"])
     console.log(card)
+
+    const pindah = () => `/${card.title}`
 </script>
 
 <template>
@@ -8,7 +10,7 @@
         <img :src="card.img" :alt="card.title">
         <h2>{{ card.title }}</h2>
         <p>{{ card.items.length }} items</p>
-        <button type="button" class="liat">See</button>
+        <button type="button" class="liat"><a :href="pindah()">See</a></button>
       </div>
 </template>
 
