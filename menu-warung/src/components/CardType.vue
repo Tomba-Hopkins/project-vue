@@ -8,6 +8,7 @@
         <img :src="card.img" :alt="card.title">
         <h2>{{ card.title }}</h2>
         <p>{{ card.items.length }} items</p>
+        <button type="button" class="liat">See</button>
       </div>
 </template>
 
@@ -47,10 +48,21 @@
     background-image: linear-gradient(to right, rgb(27, 22, 22), rgb(186, 169, 169));
     background-clip: text;
     color: transparent;
-    margin: 1rem 0;
+    margin: 0.4rem 0;
 }
 
 .card p {
     font-weight: bold;
+}
+
+.card .liat {
+  width: 50%;
+  padding: 0.3rem;
+  transition: 0.4s linear;
+  border-radius: 0.2rem;
+  border: none;
+}
+.card .liat:hover {
+  background-color: gray;
 }
 </style>
