@@ -26,7 +26,14 @@ const router = createRouter({
         {
             path: '/menu/:type/:id',
             name: 'menu',
-            component: () => import('../views/Menu.vue')
+            component: () => import('../views/Menu.vue'),
+            children: [
+                {
+                    path: 'bonus',
+                    name: 'bonus',
+                    component: () => import('../components/Bonus.vue')
+                }
+            ]
         },
       
     ]

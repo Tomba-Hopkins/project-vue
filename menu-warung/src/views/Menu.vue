@@ -1,16 +1,16 @@
 <script setup>
 
-import { useRoute } from 'vue-router';
+import { useRoute, RouterView } from 'vue-router';
 import menus from '../data/menu.json'
 import { computed } from 'vue';
 
 const route = useRoute()
 
 const type = route.params.type
-console.log(route)
+
+
 const data = computed(() => {
 
-    console.log(type)
     const tipe = menus.find((menu) => menu.title.toLowerCase() === type.toLowerCase())
 
     if (tipe) {
@@ -30,6 +30,8 @@ const data = computed(() => {
             <h2>{{ data.name }}</h2>
             <img :src="data.img" :alt="data.name">
             <p>Price: {{ data.price }}</p>
+            <button @click="bonButton = !bonButton">Bonus</button>
+            <RouterView/>
         </div>
         <h1 v-else>Not found</h1>
     </main>
