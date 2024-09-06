@@ -1,15 +1,18 @@
 <script setup>
 
 import menus from '../data/menu.json'
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
+
+const route = useRoute()
+const ada = menus.find((menu) => menu.title.toLowerCase() == route.params.type.toLowerCase())
 
 </script>
 
 <template>
     <main>
-        <h1 class="title">Foods</h1>
+        <h1 class="title">{{ ada?.title }}</h1>
         <div class="container">
-            <div class="card" v-for="item in menus[0].items" :key="item.id">
+            <div class="card" v-for="item in ada?.items" :key="item.id">
                 <img :src="item.img" alt="">
                 <h2>{{ item.name }}</h2>
                 <p>{{ item.price }}</p>

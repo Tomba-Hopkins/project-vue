@@ -13,7 +13,7 @@
         <h2>{{ card.title }}</h2>
         <p>{{ card.items.length }} items</p>
         <RouterLink class="liat" :to="`/${card.title}`">See</RouterLink>
-      </div>
+    </div>
 </template>
 
 

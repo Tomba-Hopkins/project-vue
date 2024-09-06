@@ -24,14 +24,9 @@ const router = createRouter({
             component: () => import('../views/Menu.vue')
         },
         {
-            path: '/Makanan',
-            name: 'makanan',
-            component: () => import('../views/Makanan.vue')
-        },
-        {
-            path: '/Minum',
-            name: 'minuman',
-            component: () => import('../views/Minuman.vue')
+            path: '/:type',
+            name: 'type',
+            component: () => import('../views/Tipe.vue')
         },
     ]
 })
