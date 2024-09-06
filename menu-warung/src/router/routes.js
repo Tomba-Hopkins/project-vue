@@ -19,11 +19,6 @@ const router = createRouter({
             component: () => import('../views/Contact.vue')
         },
         {
-            path: '/:type',
-            name: 'type',
-            component: () => import('../views/Tipe.vue')
-        },
-        {
             path: '/menu/:type/:id',
             name: 'menu',
             component: () => import('../views/Menu.vue'),
@@ -34,6 +29,16 @@ const router = createRouter({
                     component: () => import('../components/Bonus.vue')
                 }
             ]
+        },
+        {
+            path: '/:type',
+            name: 'type',
+            component: () => import('../views/Tipe.vue')
+        },
+        {
+            path:'/:catchall(.*)*',
+            name: 'notfound',
+            component: () => import('../views/error/Notfound.vue'),
         },
       
     ]
