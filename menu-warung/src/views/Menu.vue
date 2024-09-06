@@ -31,7 +31,7 @@ const data = computed(() => {
             <img :src="data.img" :alt="data.name">
             <p>Price: {{ data.price }}</p>
         </div>
-        <p v-else>Not found</p>
+        <h1 v-else>Not found</h1>
     </main>
 </template>
 
