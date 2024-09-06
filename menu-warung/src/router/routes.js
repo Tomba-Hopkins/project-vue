@@ -19,15 +19,16 @@ const router = createRouter({
             component: () => import('../views/Contact.vue')
         },
         {
-            path: '/menu/:id',
-            name: 'menu',
-            component: () => import('../views/Menu.vue')
-        },
-        {
             path: '/:type',
             name: 'type',
             component: () => import('../views/Tipe.vue')
         },
+        {
+            path: '/menu/:type/:id',
+            name: 'menu',
+            component: () => import('../views/Menu.vue')
+        },
+      
     ]
 })
 

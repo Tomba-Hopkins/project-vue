@@ -4,6 +4,7 @@ import menus from '../data/menu.json'
 import { RouterLink, useRoute } from 'vue-router';
 
 const route = useRoute()
+console.log(route)
 const ada = menus.find((menu) => menu.title.toLowerCase() == route.params.type.toLowerCase())
 
 </script>
@@ -16,7 +17,7 @@ const ada = menus.find((menu) => menu.title.toLowerCase() == route.params.type.t
                 <img :src="item.img" alt="">
                 <h2>{{ item.name }}</h2>
                 <p>{{ item.price }}</p>
-                <RouterLink :to="`/menu/${item.id}`">See</RouterLink>
+                <RouterLink :to="`/menu/${route.params.type.toLowerCase()}/${item.id}`">See</RouterLink>
             </div>
         </div>
     </main>
