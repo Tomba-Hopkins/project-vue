@@ -1,0 +1,33 @@
+[
+    {
+        "id":1,
+        "name":"Math",
+        "img":"https://www.freepik.com/free-vector/scientific-formulas-chalkboard_7458753.htm#query=mathematics&position=0&from_view=keyword&track=ais_hybrid&uuid=2e083262-7486-4017-ae47-0c69860c0595",
+        "soal":[
+            {
+                "id":1,
+                "text":"1 + 1 brp?",
+                "jawab":[
+                    {
+                        "id":1,
+                        "opsi":"a",
+                        "text": "2",
+                        "is_true": true
+                    },
+                    {
+                        "id":2,
+                        "opsi":"b",
+                        "text": "5",
+                        "is_true": false
+                    },
+                    {
+                        "id":3,
+                        "opsi":"c",
+                        "text": "0",
+                        "is_true": false
+                    }
+                ]
+            }
+        ]
+    }
+]
