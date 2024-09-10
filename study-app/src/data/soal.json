@@ -2,7 +2,7 @@
     {
         "id":1,
         "name":"Math",
-        "img":"https://www.freepik.com/free-vector/scientific-formulas-chalkboard_7458753.htm#query=mathematics&position=0&from_view=keyword&track=ais_hybrid&uuid=2e083262-7486-4017-ae47-0c69860c0595",
+        "img":"https://img.freepik.com/free-vector/scientific-formulas-chalkboard_23-2148494010.jpg?t=st=1725933846~exp=1725937446~hmac=40d6f25b6a8021c1debbebd29fccef63f77a6ec21f09dc6628f0cc2670c045e0&w=900",
         "soal":[
             {
                 "id":1,
@@ -10,20 +10,51 @@
                 "jawab":[
                     {
                         "id":1,
-                        "opsi":"a",
+                        "opsi":"A",
                         "text": "2",
                         "is_true": true
                     },
                     {
                         "id":2,
-                        "opsi":"b",
+                        "opsi":"B",
                         "text": "5",
                         "is_true": false
                     },
                     {
                         "id":3,
-                        "opsi":"c",
+                        "opsi":"C",
                         "text": "0",
+                        "is_true": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id":2,
+        "name":"English",
+        "img":"https://img.freepik.com/free-vector/hand-drawn-english-book-background_23-2149483336.jpg",
+        "soal":[
+            {
+                "id":1,
+                "text":"What _ you doing?",
+                "jawab":[
+                    {
+                        "id":1,
+                        "opsi":"A",
+                        "text": "do",
+                        "is_true": false
+                    },
+                    {
+                        "id":2,
+                        "opsi":"B",
+                        "text": "are",
+                        "is_true": true
+                    },
+                    {
+                        "id":3,
+                        "opsi":"C",
+                        "text": "does",
                         "is_true": false
                     }
                 ]
